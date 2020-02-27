@@ -1,33 +1,30 @@
 package com.cg.labbook.lab2.model;
-
 public abstract class MediaItem extends Item
 {
-	private int runtime;
-	
-	
-	//Constructors
-	
-	
-	public MediaItem()
-	{
+	public MediaItem() {
 		super();
 	}
 
-	public MediaItem(int identificationNumber, String title, int numberOfCopies,int runtime)
-	{
-		super(identificationNumber, title, numberOfCopies);
-		this.runtime=runtime;
-	}
-	
-	
-	//Setters and Getters
-	
-	
-	public int getRuntime() {
-		return runtime;
+	public MediaItem(int uID, String tITLE, int nOOFCOPIES) {
+		super(uID, tITLE, nOOFCOPIES);
+		
 	}
 
-	public void setRuntime(int runtime) {
-		this.runtime = runtime;
+	@Override
+	public String toString() {
+		return "MediaItem [toString()=" + super.toString() + "]";
 	}
+
+	@Override
+	public boolean equals(Object ob) {
+		
+		return super.equals(ob);
+	}
+
+	@Override
+	public void print() {
+		
+		super.print();
+	}
+	
 }

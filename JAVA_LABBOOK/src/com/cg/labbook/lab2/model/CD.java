@@ -2,39 +2,56 @@ package com.cg.labbook.lab2.model;
 
 public class CD extends MediaItem
 {
-	private String artist;
-	private String genre;
-	
-	
-	//constructors
-	
-	
-	public CD()
+	private String ARTIST;
+	private String GENRE;
+
+	public CD() {
+		super();
+	}
+
+	public CD(int uID, String tITLE, int nOOFCOPIES, String aRTIST, String gENRE) 
 	{
-		// Default constructor
+		super(uID, tITLE, nOOFCOPIES);
+		ARTIST=aRTIST;
+		GENRE=gENRE;
+	}
+
+	public String getARTIST() {
+		return ARTIST;
+	}
+
+	public void setARTIST(String aRTIST) {
+		ARTIST = aRTIST;
+	}
+
+	public String getGENRE() {
+		return GENRE;
+	}
+
+	public void setGENRE(String gENRE) {
+		GENRE = gENRE;
+	}
+
+	@Override
+	public String toString() {
+		return "CD [ARTIST=" + ARTIST + ", GENRE=" + GENRE + ", toString()=" + super.toString() + "]";
+	}
+
+	@Override
+	public boolean equals(Object ob) {
+		CD CD=(CD)ob;
+		if(super.equals(ob)==true && this.ARTIST==CD.ARTIST && this.GENRE==CD.GENRE)
+			return true;
+		return false;
+	}
+
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+		super.print();
+		System.out.print(getARTIST());
+		System.out.print(getGENRE());
 	}
 	
-	public CD(int identificationNumber, String title, int numberOfCopies, int runtime, String artist, String genre) 
-	{
-		super(identificationNumber, title, numberOfCopies, runtime);
-		this.artist=artist;
-		this.genre=genre;
-	}
 	
-	
-	//Setters and getters
-	
-	
-	public String getArtist() {
-		return artist;
-	}
-	public void setArtist(String artist) {
-		this.artist = artist;
-	}
-	public String getGenre() {
-		return genre;
-	}
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
 }
